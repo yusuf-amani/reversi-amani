@@ -14,9 +14,9 @@ function getIRIParameterValue(requestedKey){
 }
 
 // grabbing the username associated with the IRI/URL sent 
-let username = decodeURI(getIRIParameterValue('username'));
+let username = getIRIParameterValue('username');
 if((typeof username == 'undefined') || (username === null)){
-    username = "Anonymous_" + Math.floor(Math.random()*1000);
+    username="Anonymous_"+Math.floor(Math.random()*1000);
 }
 
 $('#messages').prepend('<b>'+username+':</b>' );
