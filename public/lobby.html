@@ -11,16 +11,18 @@
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
   <style>
-    .headerrow {
+    .headerrow{
       background-color: darkseagreen;
     }
-    .join_room_response {
-      background-color: rgb(223, 224, 223);
-      margin: 1px 1px 1px 10px;
+    #messagePane{
+      background-color: rgb(224, 243, 224);
     }
-    .chat_message {
+    .join_room_response,.left_room_response{
+      background-color: rgb(247, 247, 247);
+    }
+    .chat_message{
       font-size: 125%;
-      color: rgb(53,3,168);
+      color: rgb(0,0,0);
       margin: 1px 1px 1px 1px;
     }
   </style>
@@ -33,21 +35,29 @@
   <div class="container-fluid">
     <div class="row m-3 headerrow">
       <div class="col text-center">
-        <h3>Lobby</h3>
+        <h3 id = "lobbyTitle">Lobby</h3>
       </div>
     </div>
     <div class="row m-3 ">
       <div class="col">
-        <div class="row align-items-center justify-content-center m-3">
-          <div class="col-8">
+        <div class="row align-items-start justify-content-center">
+          <div class = "col-md-4">
+            <h4>Players</h4>
+            <div id = "players" class = "align-items-end text-right m-3">
+
+            </div>
+          </div>
+          <div class="col-md-8" id = "messagePane">
+            <div>
+              <h4>Messages</h4>
+            </div>
             <div class="input-group">
               <input type="text" id="chatMessage" class="form-control text-nowrap" placeholder="Enter your message here" aria-label="Enter your message to send to the chat room">
               <button type="submit" class="btn btn-primary text-nowrap" id="chatButton" onclick="sendChatMessage()">Send</button>
             </div>
+            <div id = "messages">
+            </div>
           </div>
-        </div>
-        <h4>Messages</h4>
-        <div id = "messages">
         </div>
       </div>
     </div>
@@ -61,6 +71,9 @@
   <!-- jQuery Library Link -- Google libraries, select jQuery, then use SRI Hash to create a unique link-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK" crossorigin="anonymous"></script>
   
+  <!-- jQuery UI Library link -- from Google Hosted Libraries, with the SRI Hash-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha384-Dziy8F2VlJQLMShA6FHWNul/veM9bCkRUaLqr199K94ntO5QUrLJBEbYegdSkkqX" crossorigin="anonymous"></script>
+
   <!-- Socet.io-->
   <script src="https://cdn.socket.io/4.0.1/socket.io.min.js" integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU" crossorigin="anonymous"></script>
   
