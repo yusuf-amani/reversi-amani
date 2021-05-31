@@ -21,19 +21,49 @@
   <div class="container-fluid">
     <div class="row m-3 headerrow">
       <div class="col text-center">
-        <h3 id = "lobbyTitle">Reversi</h3>
+        <h3 id = "gameTitle">Reversi</h3>
       </div>
     </div>
+
+    <div class="row m-3">
+      <div class="col text-center">
+        <h3 id = "game_over">Game Over</h3>
+      </div>
+    </div>
+
+    <div class="row m-3">
+      <div class="col-md-8 text-center justify-content-center">
+        <h3 id = "my_color">My Color</h3><br/>
+        <img class = "img-fluid" src="assets/images/white.gif" alt="White score"/>
+        <span id = "whitesum">White Sum</span>
+        <span id = "vs">vs</span>
+        <span id = "blacksum">Black Sum</span>
+        <img class = "img-fluid" src="assets/images/black.gif" alt="Black score"/>
+      </div>
+      <div class="col-md-4 text-end justify-content-end"> 
+        <div id = "quit">Quit Button</div>
+      </div>
+    </div>
+
     <div class="row m-3 ">
       <div class="col">
         <div class="row align-items-start justify-content-center">
-          <div class = "col-md-4">
-            <h4>Players</h4>
-            <div id = "players" class = "align-items-end text-right m-3">
+          <div class = "col-md-8">
+            <table>
+              <tr>
+                <td id = "0_0"><img class = "img-fluid" src="assets/images/error.gif" alt="error"/></td>
+                <td id = "0_1"><img class = "img-fluid" src="assets/images/error.gif" alt="error"/></td>
+                <td id = "0_2"><img class = "img-fluid" src="assets/images/error.gif" alt="error"/></td>
+                <td id = "0_3"><img class = "img-fluid" src="assets/images/error.gif" alt="error"/></td>
+                <td id = "0_4"><img class = "img-fluid" src="assets/images/error.gif" alt="error"/></td>
+                <td id = "0_5"><img class = "img-fluid" src="assets/images/error.gif" alt="error"/></td>
+                <td id = "0_6"><img class = "img-fluid" src="assets/images/error.gif" alt="error"/></td>
+                <td id = "0_7"><img class = "img-fluid" src="assets/images/error.gif" alt="error"/></td>
+              </tr>
 
-            </div>
+            </table>
           </div>
-          <div class="col-md-8" id = "messagePane">
+          <div class="col-md-4" id = "messagePane">
             <div>
               <h4>Messages</h4>
             </div>
