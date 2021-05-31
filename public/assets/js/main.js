@@ -136,7 +136,7 @@ socket.on('game_start_response', (payload) =>{
     let newNode = makeStartGameButton();
     $('.socket_'+payload.socket_id+' button').replaceWith(newNode);
     /* Jump to the game page */                 
-    window.location.href = 'game.html?username='+username+'&game_id'+payload.game_id;                            
+    window.location.href = 'game.html?username='+username+'&game_id='+payload.game_id;                            
 })
 
 socket.on('join_room_response', (payload) =>{
@@ -260,6 +260,9 @@ socket.on('send_chat_message_response', (payload) =>{
     newNode.show("fade", 500);
 })
 
+
+
+
 /* inital board */
 let old_board = [
     ['?', '?', '?', '?', '?', '?', '?', '?'],
@@ -271,7 +274,6 @@ let old_board = [
     ['?', '?', '?', '?', '?', '?', '?', '?'],
     ['?', '?', '?', '?', '?', '?', '?', '?']
 ];
-
 
 /* Game Update */
 socket.on('game_update', (payload) =>{
@@ -345,6 +347,8 @@ socket.on('game_update', (payload) =>{
     }
     old_board = board;
 })
+
+
 
 
 /* Request to join the chat room - Global Launch*/
