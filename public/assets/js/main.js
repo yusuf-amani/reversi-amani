@@ -260,18 +260,20 @@ socket.on('send_chat_message_response', (payload) =>{
     newNode.show("fade", 500);
 })
 
-
+/* inital board */
 let old_board = [
-    ['?','?','?','?','?','?','?','?'],
-    ['?','?','?','?','?','?','?','?'],
-    ['?','?','?','?','?','?','?','?'],
-    ['?','?','?','?','?','?','?','?'],
-    ['?','?','?','?','?','?','?','?'],
-    ['?','?','?','?','?','?','?','?'],
-    ['?','?','?','?','?','?','?','?'],
-    ['?','?','?','?','?','?','?','?']
+    ['?', '?', '?', '?', '?', '?', '?', '?'],
+    ['?', '?', '?', '?', '?', '?', '?', '?'],
+    ['?', '?', '?', '?', '?', '?', '?', '?'],
+    ['?', '?', '?', '?', '?', '?', '?', '?'],
+    ['?', '?', '?', '?', '?', '?', '?', '?'],
+    ['?', '?', '?', '?', '?', '?', '?', '?'],
+    ['?', '?', '?', '?', '?', '?', '?', '?'],
+    ['?', '?', '?', '?', '?', '?', '?', '?']
 ];
 
+
+/* Game Update */
 socket.on('game_update', (payload) =>{
     if((typeof payload == 'undefined') || (payload === null)){
         console.log('Server did not send a payload');
@@ -281,7 +283,6 @@ socket.on('game_update', (payload) =>{
         console.log(payload.message);
         return;
     }
-
     let board = payload.game.board;
     if((typeof board == 'undefined') || (board === null)){
         console.log('Server did not send a valid board to display');
@@ -337,10 +338,8 @@ socket.on('game_update', (payload) =>{
                     graphic = "error.gif";
                     altTag = "error";
                 }
-
                 const t = Date.now();
                 $('#'+row+'_'+column).html('<img class="img-fluid" src="assets/images/'+graphic+'?time='+t+'" alt="'+altTag+'" />');
-
             }
         }
     }
@@ -348,7 +347,7 @@ socket.on('game_update', (payload) =>{
 })
 
 
-/* Request to join the chat room */
+/* Request to join the chat room - Global Launch*/
 $( () => {
     let request = {};
     request.room = chatRoom;

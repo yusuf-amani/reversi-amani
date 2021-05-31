@@ -146,9 +146,8 @@ io.on('connection', (socket) => {
                     serverLog('join_room succeeded ', JSON.stringify(response)); 
                     if(room !== "Lobby"){
                         send_game_update(socket, room, 'initial update');
-
                     }
-                    
+
                 }
             }
         });
@@ -502,20 +501,17 @@ function create_new_game(){
     new_game.whose_turn = 'white';
 
     new_game.board = [
-        [' ',' ',' ',' ',' ',' ',' ',' '],
-        [' ',' ',' ',' ',' ',' ',' ',' '],
-        [' ',' ',' ',' ',' ',' ',' ',' '],
-        [' ',' ',' ','w','b',' ',' ',' '],
-        [' ',' ',' ','b','w',' ',' ',' '],
-        [' ',' ',' ',' ',' ',' ',' ',' '],
-        [' ',' ',' ',' ',' ',' ',' ',' '],
-        [' ',' ',' ',' ',' ',' ',' ',' ']
+        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', 'w', 'b', ' ', ' ', ' '],
+        [' ', ' ', ' ', 'b', 'w', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
+        [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
     ];
-
     return new_game;
-
 }
-
 
 function send_game_update(socket, game_id, message ){
     /* Check to see if a game with game_id exists */
@@ -523,7 +519,6 @@ function send_game_update(socket, game_id, message ){
     /* Assign this socket a color */
     /* Send game update */ 
     /* Check if the game is over */ 
-
 
     /* Check to see if a game with game_id exists */
     if((typeof games[game_id] == 'undefined') || (games[game_id] === null)) {
@@ -533,8 +528,8 @@ function send_game_update(socket, game_id, message ){
 
     /* Send game update */ 
     let payload = {
-        result : 'success',
-        game_id : game_id,
+        result: 'success',
+        game_id: game_id,
         game: games[game_id],
         message: message
     }
