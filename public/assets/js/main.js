@@ -364,15 +364,40 @@ socket.on('game_update', (payload) =>{
                 /*if space is empty add interactivity */
                 if(board[row][column] === ' '){
                     $('#'+row+'_'+column).addClass('hovered_over');
+                    $('#'+row+'_'+column).click(((r,c) => {
+                        return( () => {
+                            let payload = {
+                                row: r,
+                                column: c,
+                                color: my_color
+                            };
+                            console.log('**** client log message, sending \'play_token\' commad: ' + JSON.stringify(payload));
+                            socket.emit('play token', payload);
+                        });
+                    }) (row,column));
                 }
+                else{
+                    $('#'+row+'_'+column).removeClass('hovered_over');
 
-
+                }
             }
         }
     }
-    old_board = board;
+old_board = board;
 })
 
+
+/* Play token */
+socket.on('play_token_response', (payload) =>{
+    if((typeof payload == 'undefined') || (payload === null)){
+        console.log('Server did not send a payload');
+        return;
+    }
+    if(payload.result === 'fail'){
+        console.log(payload.message);
+        return;
+    }
+})
 
 
 
