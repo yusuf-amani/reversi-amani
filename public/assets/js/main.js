@@ -316,7 +316,7 @@ socket.on('game_update', (payload) =>{
                 let graphic = "";
                 let altTag = "";
                 if ((old_board[row][column] === '?') && (board[row][column] === ' ')) {
-                    graphic = "emptytransparent.gif";
+                    graphic = "empty.gif";
                     altTag = "empty space";
                 }
                 else if ((old_board[row][column] === '?') && (board[row][column] === 'w')) {
