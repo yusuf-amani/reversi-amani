@@ -357,6 +357,16 @@ socket.on('game_update', (payload) =>{
                 }
                 const t = Date.now();
                 $('#'+row+'_'+column).html('<img class="img-fluid" src="assets/images/'+graphic+'?time='+t+'" alt="'+altTag+'" />');
+
+                /* turn off interactivity */
+                $('#'+row+'_'+column).off('click');
+
+                /*if space is empty add interactivity */
+                if(board[row][column] === ' '){
+                    $('#'+row+'_'+column).addClass('hovered_over');
+                }
+
+
             }
         }
     }

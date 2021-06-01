@@ -561,7 +561,7 @@ function send_game_update(socket, game_id, message ){
                     games[game_id].player_white.socket = second;
                     games[game_id].player_white.username = players[second].username;
                 }
-                else if(games[game_id].player_white.black === ""){
+                else if(games[game_id].player_black.socket === ""){
                     /* This player should be black */
                     console.log("Black is assigned to: " + second);
                     games[game_id].player_black.socket = second;
@@ -569,7 +569,7 @@ function send_game_update(socket, game_id, message ){
                 }
                 else{
                     /* This player should be kicked out */
-                    console.log("Kicking " + second + " out of game: " + game_id);
+                    console.log("Kicking " + second + " boo out of game: " + game_id);
                     io.in(second).socketsLeave([game_id]);
                 }
             }
