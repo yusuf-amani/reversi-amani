@@ -12,10 +12,11 @@
 
   <style>
     .headerrow{
-      background-color: darkseagreen;
+      background-color:rgb(25, 73, 115);
+      color: white;
     }
     #messagePane{
-      background-color: rgb(224, 243, 224);
+      background-color: rgb(172, 207, 238);
     }
     .join_room_response,.left_room_response{
       background-color: rgb(247, 247, 247);
@@ -53,7 +54,7 @@
             </div>
             <div class="input-group">
               <input type="text" id="chatMessage" class="form-control text-nowrap" placeholder="Enter your message here" aria-label="Enter your message to send to the chat room">
-              <button type="submit" class="btn btn-primary text-nowrap" id="chatButton" onclick="sendChatMessage()">Send</button>
+              <button type="submit" class="btn btn-warning text-nowrap" id="chatButton" onclick="sendChatMessage()">Send</button>
             </div>
             <div id = "messages">
             </div>

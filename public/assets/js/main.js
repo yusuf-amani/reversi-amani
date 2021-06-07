@@ -308,20 +308,20 @@ socket.on('game_update', (payload) =>{
 
     //display User's color at the top of the screen
     if( my_color === 'white'){
-        $("#my_color").html('<h3 id="my_color">I am white</h3>');
+        $("#my_color").html('<h3 id="my_color">I am lavender</h3>');
     }
     else if( my_color === 'black'){
-        $("#my_color").html('<h3 id="my_color">I am black</h3>');
+        $("#my_color").html('<h3 id="my_color">I am blueberry</h3>');
     }
     else{
         $("#my_color").html('<h3 id="my_color">Error: I don\'t know what color I am</h3>');
     }
 
     if( payload.game.whose_turn === 'white'){
-        $("#my_color").append('<h4>It is white\'s turn</h4>');
+        $("#my_color").append('<h4>It is lavender\'s turn</h4>');
     }
     else if( payload.game.whose_turn === 'black'){
-        $("#my_color").append('<h4>It is black\'s turn</h4>');
+        $("#my_color").append('<h4>It is blueberry\'s turn</h4>');
     }
     else{
         $("#my_color").append('<h4>Error: Don\'t know whose turn it is</h4>');
@@ -385,7 +385,7 @@ socket.on('game_update', (payload) =>{
                     altTag = "error";
                 }
                 const t = Date.now();
-                $('#'+row+'_'+column).html('<img class="img-fluid" src="assets/images/'+graphic+'?time='+t+'" alt="'+altTag+'" />');
+                $('#'+row+'_'+column).html('<img class="img-fluid" src="assets/images2/'+graphic+'?time='+t+'" alt="'+altTag+'" />');
             }
 
             /* Set up interactivity */

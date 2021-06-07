@@ -1,10 +1,18 @@
 
 body{
-    background-color: rgb(179,230,179);
+    background-color:  rgb(25, 73, 115);
+}
+
+h3, #whitesum, #blacksum, #vs, #game_over {
+    color: white;
+}
+
+#gameTitle{
+    color: rgb(25, 73, 115);
 }
 
 .headerrow, #messagePane{
-    background-color: rgb(224, 243, 224);
+    background-color:  rgb(172, 207, 238);
 }
 
 .join_room_response,.left_room_response{
@@ -24,12 +32,12 @@ table#game_board{
 }
 
 table#game_board td{
-    background-color: rgb(83, 168, 83);
+    background-color: rgb(245, 245, 237);
     border: 1px solid black;
     margin: 0px;
     padding: 0px;
 }
    
 td.hovered_over:hover{
-    background-image: url('/assets/images/hover.gif');
+    background-image: url('/assets/images2/hover.gif');
 }
